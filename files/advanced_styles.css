@@ -338,10 +338,16 @@ background:#000;
 display:block;
 }
 
-.preview-file{
+.preview-file,
+.course-preview-overlay iframe{
 width:100%;
 height:100%;
 border:none;
+display:block;
+}
+
+.preview-file{
+background:#fff;
 }
 
 .course-card h3{
