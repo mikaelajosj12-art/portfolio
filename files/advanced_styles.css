@@ -354,9 +354,38 @@ color:rgba(255,255,255,.75);
 line-height:1.6;
 }
 
-.course-card p{
-color:rgba(255,255,255,.75);
-line-height:1.6;
+.section-intro{
+color:rgba(255,255,255,.78);
+margin-bottom:24px;
+max-width:760px;
+line-height:1.7;
+}
+
+.cert-section{
+margin-top:28px;
+}
+
+.cert-section h3{
+margin:0 0 16px;
+font-size:1.2rem;
+color:var(--accent-2);
+}
+
+.course-meta{
+margin-bottom:10px;
+}
+
+.cert-badge{
+display:inline-block;
+padding:6px 10px;
+border-radius:999px;
+font-size:0.78rem;
+font-weight:700;
+letter-spacing:0.04em;
+text-transform:uppercase;
+background:rgba(92,135,210,.2);
+color:var(--accent-2);
+border:1px solid rgba(92,135,210,.35);
 }
 
 .reveal{
