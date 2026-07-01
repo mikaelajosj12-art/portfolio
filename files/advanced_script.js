@@ -38,6 +38,31 @@ function type() {
 
 type();
 
+document.querySelectorAll('.accordion-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+        const group = button.closest('.accordion-group');
+        const targetId = button.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        const groupName = button.getAttribute('data-group');
+        const isOpen = group.classList.contains('active');
+
+        document.querySelectorAll(`.accordion-group [data-group="${groupName}"]`).forEach(otherButton => {
+            const otherGroup = otherButton.closest('.accordion-group');
+            const otherPanel = document.getElementById(otherButton.getAttribute('data-target'));
+
+            if (otherButton !== button) {
+                otherGroup.classList.remove('active');
+                otherPanel.classList.remove('active');
+                otherButton.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        group.classList.toggle('active', !isOpen);
+        targetPanel.classList.toggle('active', !isOpen);
+        button.setAttribute('aria-expanded', String(!isOpen));
+    });
+});
+
 window.addEventListener('scroll', () => {
 
     document.querySelectorAll('.reveal').forEach(el => {
